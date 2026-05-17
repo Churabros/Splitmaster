@@ -204,12 +204,12 @@ Wei paid RM60 taxi (split 3 ways = RM20 each)
 
 Net balances:
   Ahmad: +RM40 (is owed)
-  Wei:   +RM10 (is owed)
+  yusuf:   +RM10 (is owed)
   Sara:  -RM50 (owes money)
 
 Algorithm:
   Sara → Ahmad: RM40  (Sara still owes RM10)
-  Sara → Wei:   RM10  (all settled!)
+  Sara → yusuf:   RM10  (all settled!)
 
 Result: 2 payments instead of potential 6 ✅
 ```
@@ -244,9 +244,3 @@ Result: 2 payments instead of potential 6 ✅
 ## 👨‍💻 Author
 
 **Yusuf** — Built for the Shortcut Asia Internship Challenge 2026
-
----
-
-## 📄 License
-
-This project is open source and available under the [MIT License](LICENSE).

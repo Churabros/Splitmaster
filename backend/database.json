@@ -1,0 +1,55 @@
+{
+  "groups": [
+    {
+      "id": "02cfc204-1387-4968-8377-c8c07248bd33",
+      "name": "Bali",
+      "members": [
+        "Yusuf",
+        "Ali",
+        "Feisal"
+      ],
+      "created_at": "2026-05-17T17:27:54.608801"
+    }
+  ],
+  "expenses": [
+    {
+      "id": "5ff5e3b4-d609-497e-906e-9e5c6a796c50",
+      "group_id": "02cfc204-1387-4968-8377-c8c07248bd33",
+      "title": "Dinner",
+      "amount": 130.0,
+      "paid_by": "Yusuf",
+      "split_between": [
+        "Yusuf",
+        "Ali",
+        "Feisal"
+      ],
+      "date": "2026-05-17T17:28:23.332741"
+    },
+    {
+      "id": "112bc07b-95c7-4894-80ea-fa8e4b5ccff5",
+      "group_id": "02cfc204-1387-4968-8377-c8c07248bd33",
+      "title": "Grab",
+      "amount": 30.0,
+      "paid_by": "Feisal",
+      "split_between": [
+        "Yusuf",
+        "Ali",
+        "Feisal"
+      ],
+      "date": "2026-05-17T17:28:45.993739"
+    },
+    {
+      "id": "49048ef0-998a-4b0f-b8ec-972e018de0f7",
+      "group_id": "02cfc204-1387-4968-8377-c8c07248bd33",
+      "title": "Receipt",
+      "amount": 22.65,
+      "paid_by": "Ali",
+      "split_between": [
+        "Yusuf",
+        "Ali",
+        "Feisal"
+      ],
+      "date": "2026-05-17T17:30:54.543622"
+    }
+  ]
+}

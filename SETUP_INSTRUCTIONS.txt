@@ -1,0 +1,88 @@
+# SplitSmart - Setup Instructions
+
+## WHERE TO PUT EACH FILE
+
+### Backend files → put inside: splitsmart/backend/
+- main.py  ← REPLACE the existing one
+
+### Frontend files → put inside: splitsmart/frontend/
+- app/_layout.tsx       ← REPLACE existing
+- app/index.tsx         ← REPLACE existing
+- app/create-group.tsx  ← NEW file
+- app/group/[id].tsx    ← NEW file (create the "group" folder first)
+- app/add-expense.tsx   ← NEW file
+- app/scanner.tsx       ← NEW file
+- constants/api.ts      ← NEW file (create the "constants" folder first)
+- types/index.ts        ← NEW file (create the "types" folder first)
+
+---
+
+## STEP 1 - Install extra packages
+
+Open a terminal, go to your frontend folder:
+    cd C:\Users\yabat\splitsmart\frontend
+    npx expo install expo-image-picker
+    npm install
+
+---
+
+## STEP 2 - Install backend AI library
+
+Open another terminal, go to backend:
+    cd C:\Users\yabat\splitsmart\backend
+    venv\Scripts\activate
+    pip install anthropic
+
+---
+
+## STEP 3 - Get your Anthropic API key (for receipt scanner)
+
+1. Go to: https://console.anthropic.com
+2. Sign up / log in
+3. Go to API Keys → Create Key
+4. Copy the key
+
+Then in your backend terminal (venv active), set it:
+    set ANTHROPIC_API_KEY=your_key_here
+
+(You need to do this every time you open a new terminal, OR add it to your system environment variables permanently)
+
+---
+
+## STEP 4 - Find your computer's IP address
+
+In a terminal run:
+    ipconfig
+
+Look for "IPv4 Address" under "Wireless LAN adapter Wi-Fi"
+Example: 192.168.1.105
+
+Then open: splitsmart/frontend/constants/api.ts
+Replace YOUR_IP_ADDRESS with your actual IP.
+Example: export const API_URL = 'http://192.168.1.105:8000';
+
+---
+
+## STEP 5 - Run everything
+
+Terminal 1 (Backend):
+    cd C:\Users\yabat\splitsmart\backend
+    venv\Scripts\activate
+    set ANTHROPIC_API_KEY=your_key_here
+    uvicorn main:app --reload --host 0.0.0.0
+
+Terminal 2 (Frontend):
+    cd C:\Users\yabat\splitsmart\frontend
+    npx expo start
+
+Scan the QR code with Expo Go on your phone.
+Make sure your phone and laptop are on the same WiFi!
+
+---
+
+## IMPORTANT NOTES
+
+- Long press on a group or expense to delete it
+- The receipt scanner needs the ANTHROPIC_API_KEY to work
+- The --host 0.0.0.0 flag lets your phone reach the backend over WiFi
+- If the app can't connect, double-check your IP in constants/api.ts
